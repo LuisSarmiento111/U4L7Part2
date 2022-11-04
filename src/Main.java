@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Choose a secure password that meets these requirements:");
+        System.out.println("- Is at least 8 characters long");
+        System.out.println("- Contains at least one uppercase letter");
+        System.out.println("- Contains at least one lowercase letter");
+        System.out.println("- Contains at least one numeric digit");
+        System.out.println("- Contains at least one of these symbols: ! @ # $ % ^ & * ?");
+        System.out.print("\nEnter your secure password: ");
+        String password = scanner.nextLine();
+        Password test = new Password(password);
+        while (test.isSecure() == true) {
+            System.out.println(test.status());
+            System.out.println("Password is not secure.\n ");
+            System.out.print("\nEnter your secure password: ");
+            test.setPassword(scanner.nextLine());
+        }
+
+    /* to be implemented
+       create and use a SecurePassword object with the user’s password and determine
+       if it’s secure (using isSecure()), and if not, provide them a status update
+       (using status()) and prompt them to try again until they have a password that
+       meets all requirements.  Then inform them, "Password is secure" and end.
+
+       Note that, as the user provides updated passwords, you will need to update the
+       password in your SecurePassword object using the setter method, .setPassword(),
+    */
+    }
+}
+
