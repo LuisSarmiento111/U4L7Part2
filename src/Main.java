@@ -15,9 +15,9 @@ public class Main
         System.out.print("\nEnter your secure password: ");
         String password = scanner.nextLine();
         Password test = new Password(password);
-        while (test.isSecure() == true) {
-            System.out.println(test.status());
+        while (test.isSecure() == false) {
             System.out.println("Password is not secure.\n ");
+            System.out.println(test.status());
             System.out.print("\nEnter your secure password: ");
             test.setPassword(scanner.nextLine());
         }
